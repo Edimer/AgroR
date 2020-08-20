@@ -1,2 +1,2 @@
 # AgroR
-Repositorio para presentaciones, ejemplos y clases de estadística y machine learning con R.
+Repositorio para presentaciones y ejemplos de estadística y machine learning con R.
