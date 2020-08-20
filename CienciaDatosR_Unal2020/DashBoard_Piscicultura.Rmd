@@ -1,0 +1,251 @@
+---
+title: "Piscicultura Boyacá"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+# ---------------- Cargando bibliotecas
+library(flexdashboard)
+library(tidyverse)
+library(Hmisc)
+library(DT)
+library(plotly)
+library(broom)
+
+# ---------------- Importando datos iniciales
+datos <- read_csv(
+  "datos/Sector_Agropecuario._Piscicultura_en_estanques_-_DEPARTAMENTO_DE_BOYAC_.csv",
+  )
+
+# ---------------- Depurando datos
+datos %>% 
+  # Renombrando variables
+  rename(Año = AÑO, 
+         Municipio = MUNICIPIO, 
+         Especie = ESPECIE,
+         AnimalSiembra = `ANIMALES SEMBRADOS`,
+         AnimalCosecha = `ANIMALES COSECHADOS`,
+         PesoProm = `PESO PROMEDIO POR ANIMAL AL COSECHAR(g)`,
+         Pdn = `PRODUCCION ESTIMADA(kg)`,
+         Precio_Kg = `PRECIO AL PRODUCTOR($/kg)`) %>% 
+  # Editano mayúsculas y minúsculas
+  mutate(Municipio = capitalize(tolower(Municipio)),
+         Especie = capitalize(tolower(Especie))) %>% 
+  # Coercionando a factores 
+  mutate_if(is.character, as.factor) %>% 
+  # Coercionando año a factor %>% 
+  mutate(Año = factor(Año)) %>% 
+  # Filtrando precios menores a 15000 %>% 
+  filter(Precio_Kg <= 15000) %>% 
+  # Filtrando precios mayores 3000 %>% 
+  filter(Precio_Kg >= 3000) ->
+  datosFinal
+```
+
+# Datos
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Base de datos
+
+
+```{r}
+datosFinal %>% 
+  datatable(extensions = 'Buttons', options = list(
+     dom = 'Bfrtip',
+     buttons = c('excel', 'pdf')),
+     rownames = FALSE)
+```
+
+Column {data-width=250}
+-----------------------------------------------------------------------
+
+### Información General
+
+- Los datos pueden ser consultados [aquí.](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Sector-Agropecuario-Piscicultura-en-estanques-DEPA/yi68-jjgw)
+- **Variables:**
+    - Año
+    - Municipio
+    - Especie
+    - Animales sembrados
+    - Animales cosechados
+    - Peso promedio (gramos)
+    - Producción estimaga (kg)
+    - Precio ($/Kg)
+- **Depuración:**
+    - Renombrar variables.
+    - Editar mayúscuas y minúsculas.
+    - Coerción de variables tipo caracter a factores.
+
+row {data-width=150}
+-----------------------------------------------------------------------
+    
+### Número de filas
+
+```{r}
+filas <- nrow(datosFinal)
+valueBox(filas, icon = "fas fa-fish", color = "primary")
+```
+
+### Número de columnas
+
+```{r}
+columnas <- ncol(datosFinal)
+valueBox(columnas, icon = "fas fa-fish", color = "success")
+```
+
+### Número de años
+
+```{r}
+años <- datosFinal %>% pull(Año) %>% as.factor() %>% 
+  levels() %>% length()
+valueBox(años, icon = "fas fa-fish", color = "danger")
+```
+
+### Número de especies
+
+```{r}
+especies <- datosFinal %>% pull(Especie) %>% as.factor() %>% 
+  levels() %>% length()
+valueBox(especies, icon = "fas fa-fish", color = "warning")
+```
+
+### Número de municipios
+
+```{r}
+municipios <- datosFinal %>% pull(Municipio) %>% as.factor() %>% 
+  levels() %>% length()
+valueBox(municipios, icon = "fas fa-fish", color = "primary")
+```    
+
+
+# Exploratorio 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Variaciones Anuales
+
+```{r, fig.width=9}
+datosFinal %>% 
+  select(Año, PesoProm, Pdn, Precio_Kg, AnimalSiembra, AnimalCosecha) %>% 
+  gather(key = "key", value = "valor", -Año) %>% 
+  ggplot(aes(x = Año, y = valor)) +
+  facet_wrap(facets = ~key, scales = "free") +
+  geom_boxplot() +
+  scale_y_log10() +
+  theme_bw() +
+  labs(x = "Año", y = "", subtitle = "Escala logarítmica")
+```
+
+Column {data-width=350  .tabset}
+-----------------------------------------------------------------------
+
+### Trucha por municipios
+
+```{r}
+datosFinal %>% 
+  filter(Especie == "Trucha") %>% 
+  group_by(Municipio) %>% 
+  summarise(Peso = round(mean(PesoProm, na.rm = TRUE), digits = 2),
+            Producción = round(mean(Pdn, na.rm = TRUE), digits = 2),
+            Precio = round(mean(Precio_Kg, na.rm = TRUE), digits = 2),
+            N = n()) %>% 
+  arrange(desc(Precio)) %>% 
+  datatable(extensions = 'Buttons', options = list(
+     dom = 'Bfrtip',
+     buttons = c('excel', 'pdf')),
+     rownames = FALSE)
+```
+
+### Resumen por  Especie
+
+```{r}
+datosFinal %>% 
+  filter(!is.na(Especie)) %>% 
+  group_by(Especie) %>% 
+  summarise(Peso = round(mean(PesoProm, na.rm = TRUE), digits = 2),
+            Producción = round(mean(Pdn, na.rm = TRUE), digits = 2),
+            Precio = round(mean(Precio_Kg, na.rm = TRUE), digits = 2),
+            N = n()) %>% 
+  arrange(desc(N)) %>% 
+  datatable(extensions = 'Buttons', options = list(
+     dom = 'Bfrtip',
+     buttons = c('excel', 'pdf')),
+     rownames = FALSE)
+```
+
+# Análisis Estadístico
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Comparación de Años
+
+- **Nota:** en el ejemplo sólo utilizamos Trucha y la variable bajo análisis es el precio por kilogramo.
+
+```{r}
+g1 <- datosFinal %>% 
+  filter(Especie == "Trucha") %>% 
+  filter(!is.na(Especie)) %>% 
+  group_by(Año)  %>% 
+  summarise(Promedio = round(mean(Precio_Kg, na.rm = TRUE), digits = 2),
+            DE = round(sd(Precio_Kg, na.rm = TRUE), digits = 2),
+            N = n()) %>% 
+  ggplot(aes(x = Año, y = Promedio,
+             ymin = Promedio - DE,
+             ymax = Promedio + DE)) +
+  geom_errorbar(width = 0.1) +
+  geom_point() +
+  labs(y = "Precio ($/Kg)")
+ggplotly(g1)
+```
+
+
+### Análisis de varianza 
+
+```{r}
+data_trucha <- datosFinal %>% 
+  filter(Especie == "Trucha") %>% 
+  filter(!is.na(Especie))
+anova_trucha <- aov(Precio_Kg ~ Año, data = data_trucha)
+tidy(anova_trucha) %>% 
+  mutate_if(is.numeric, round, digits = 2) %>% 
+  datatable(extensions = 'Buttons', options = list(
+     dom = 'Bfrtip',
+     buttons = c('excel', 'pdf')),
+     rownames = FALSE) 
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Resumen Trucha
+
+```{r}
+datosFinal %>% 
+  filter(Especie == "Trucha") %>% 
+  filter(!is.na(Especie)) %>% 
+  group_by(Año)  %>% 
+  summarise(Promedio = round(mean(Precio_Kg, na.rm = TRUE), digits = 2),
+            DE = round(sd(Precio_Kg, na.rm = TRUE), digits = 2),
+            N = n()) %>% 
+  datatable(extensions = 'Buttons', options = list(
+     dom = 'Bfrtip',
+     buttons = c('excel', 'pdf')),
+     rownames = FALSE)
+```
+
+### Análisis de Residuales
+
+```{r, fig.width=9}
+par(mfrow = c(2, 2))
+plot(anova_trucha)
+```
+

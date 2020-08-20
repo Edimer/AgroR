@@ -1,0 +1,130 @@
+---
+title: "Piscicultura Boyacá"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+# ---------------- Cargando bibliotecas
+library(flexdashboard)
+library(tidyverse)
+library(Hmisc)
+library(DT)
+
+# ---------------- Importando datos iniciales
+datos <- read_csv(
+  "datos/Sector_Agropecuario._Piscicultura_en_estanques_-_DEPARTAMENTO_DE_BOYAC_.csv",
+  )
+
+# ---------------- Depurando datos
+datos %>% 
+  # Renombrando variables
+  rename(Año = AÑO, 
+         Municipio = MUNICIPIO, 
+         Especie = ESPECIE,
+         AnimalSiembra = `ANIMALES SEMBRADOS`,
+         AnimalCosecha = `ANIMALES COSECHADOS`,
+         PesoProm = `PESO PROMEDIO POR ANIMAL AL COSECHAR(g)`,
+         Pdn = `PRODUCCION ESTIMADA(kg)`,
+         Precio_Kg = `PRECIO AL PRODUCTOR($/kg)`) %>% 
+  # Editano mayúsculas y minúsculas
+  mutate(Municipio = capitalize(tolower(Municipio)),
+         Especie = capitalize(tolower(Especie))) %>% 
+  # Coercionando a factores 
+  mutate_if(is.character, as.factor) %>% 
+  # Coercionando año a factor %>% 
+  mutate(Año = factor(Año)) ->
+  datosFinal
+```
+
+# Datos
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Base de datos
+
+Column {data-width=250}
+-----------------------------------------------------------------------
+
+### Información General
+
+- Los datos pueden ser consultados [aquí.](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Sector-Agropecuario-Piscicultura-en-estanques-DEPA/yi68-jjgw)
+- **Variables:**
+    - Año
+    - Municipio
+    - Especie
+    - Animales sembrados
+    - Animales cosechados
+    - Peso promedio (gramos)
+    - Producción estimaga (kg)
+    - Precio ($/Kg)
+- **Depuración:**
+    - Renombrar variables.
+    - Editar mayúscuas y minúsculas.
+    - Coerción de variables tipo caracter a factores.
+
+
+# Exploratorio 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Variaciones Anuales
+
+```{r}
+
+```
+
+Column {data-width=350  .tabset}
+-----------------------------------------------------------------------
+
+### Resumen Municipios
+
+```{r}
+
+```
+
+### Resumen Especie
+
+```{r}
+
+```
+
+# Análisis Estadístico
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Comparación de Años
+
+```{r}
+
+```
+
+
+### Análisis de varianza
+
+```{r}
+
+```
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+
+### Resumen Trucha
+
+```{r}
+
+```
+
+### Análisis de Residuales
+
+```{r}
+
+```
+

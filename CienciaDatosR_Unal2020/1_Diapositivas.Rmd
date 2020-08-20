@@ -1,0 +1,329 @@
+---
+title: "Ciencia de datos con R:"
+subtitle: "Usos en el sector agropecuario <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "[Edimer David Jaramillo](https://edimer.github.io/)"
+institute: "Universidad Nacional - Medellín"
+date: "31-07-2020"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+class: inverse, center, middle
+
+# ¿Ciencia de datos?
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+---
+# Ciencia de datos
+
+<br>
+<center>
+<img src = "img/img2.png"/>
+</center>
+
+---
+# Científico de datos
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center>
+<img src = "img/img1.png"/>
+</center>
+
+.footnote[
+[1] [Artículo.](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)
+]
+
+<!--Resaltando texto en color .red[rojo], .orange[naranja] y .blue[azul].-->
+
+---
+# Conceptos relacionados
+
+<br>
+
+<center>
+<img src = "img/img4.png"/>
+</center>
+
+---
+# Inteligencia Artificial (IA)
+
+<br>
+
+<center>
+<img src = "img/img5.png"/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Machine Learning - Deep Learning
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+# Machine Learning
+
+> *"El aprendizaje automático es el estudio de algoritmos computacionales que permiten que los programas informáticos mejoren automáticamente a través de la experiencia"*
+> **Tom Mitchell.**
+
+.footnote[
+[1] [Libro: Machine Learning (Tom Mitchell).](http://profsite.um.ac.ir/~monsefi/machine-learning/pdf/Machine-Learning-Tom-Mitchell.pdf)
+]
+<br>
+<center>
+<img src = "img/img6.png"/>
+</center>
+
+
+---
+# *Performance* vs volumen de datos
+
+<br>
+<br>
+
+<center>
+<img src = "img/img7.png"/>
+</center>
+
+---
+# Deep Learning
+
+<br>
+<center>
+<img src = "img/img8.gif"/>
+</center>
+
+---
+# Complejidad vs interpretación
+
+<br>
+<br>
+<br>
+<br>
+<center>
+<img src = "img/img8.png"/>
+</center>
+
+--
+
+- **.blue[¿Cuál es mi objetivo?]**
+    - ¿Explicar?
+    - ¿Predecir?
+
+---
+class: inverse, center, middle
+
+# Mercado...
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+# Uso masivo de la información
+
+<br>
+<br>
+<br>
+<br>
+<center>
+<img src = "img/img9.png"/>
+</center>
+
+---
+
+# Herramientas: software
+
+<br>
+<br>
+<br>
+<br>
+<center>
+<img src = "img/img10.png"/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Aplicaciones en agricultura
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# SIPRA: Colombia
+
+.footnote[
+[1] [Página web SIPRA Colombia.](https://sipra.upra.gov.co/)
+]
+
+<br>
+<center>
+<img src = "img/img11.png"/>
+</center>
+
+---
+
+# Agrosavia: sistemas de información
+
+.footnote[
+[1] [Sistemas de información Agrosavia.](https://www.agrosavia.co/productos-y-servicios/sistemas-de-informaci%C3%B3n)
+]
+
+<br>
+<center>
+<img src = "img/img14.png" ; height = 400/>
+</center>
+
+---
+
+# SoilGrids
+
+- [Artículo SoilGrids.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169748)
+
+<center>
+<img src = "img/img12.png" ; height = 400/>
+</center>
+
+.footnote[
+[1] [Página web SoilGrids.](https://soilgrids.org/)
+]
+
+
+
+---
+
+# Chitale: India
+
+.footnote[
+[1] [Página web Chitale.](https://www.chitalebandhu.in/)
+]
+
+<center>
+<img src = "img/img16.png" width = 400; height = 300/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Proceso de análisis de datos
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# Entendimiento...
+
+<br>
+<br>
+<center>
+<img src = "img/img3.png"/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Ejemplo con R: Dashboard
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# Componentes del Tidyverse
+
+<br>
+<br>
+<br>
+<br>
+<center>
+<img src = "img/img15.png"/>
+</center>
+
+
+.footnote[
+[1] [Página web flexdashboard.](https://rmarkdown.rstudio.com/flexdashboard/)
+]
+
+---
+class: inverse, center, middle
+
+# Recursos de Información
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# An Introduction to Statistical Learning
+
+.footnote[
+[1] [Libro: versión inglés.](http://faculty.marshall.usc.edu/gareth-james/ISL/)
+]
+
+<br>
+<center>
+<img src = "img/libro1.png" width = 600; height = 400/>
+</center>
+
+---
+
+# R para Ciencia de Datos
+
+.footnote[
+[1] [Libro: versión español.](https://es.r4ds.hadley.nz/)
+]
+
+<br>
+<center>
+<img src = "img/libro2.png"/>
+</center>
+
+---
+
+# Libro vivo de Ciencia de Datos
+
+<br>
+<center>
+<img src = "img/libro3.png"width = 350; height = 400/>
+</center>
+
+.footnote[
+[1] [Libro: versión español.](https://librovivodecienciadedatos.ai/)
+]
+
+---
+class: inverse, center, middle
+
+# Material de apoyo
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# Repositorio Github
+
+<br>
+<center>
+<img src = "img/img17.png"/>
+</center>
+
+.footnote[
+[1] [Código fuente y datos.](https://github.com/Edimer/CienciaDatosR)
+]
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
