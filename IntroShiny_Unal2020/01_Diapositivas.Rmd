@@ -239,9 +239,11 @@ class: inverse, center, middle
 
 - [Shiny guía español](https://rstudio.com/wp-content/uploads/2015/03/shiny-spanish.pdf)
 - [Learn Shiny - Garret Grolemund](https://shiny.rstudio.com/tutorial/)
+- [Hoja de referencia Shiny (Español)](https://rstudio.com/wp-content/uploads/2015/03/shiny-spanish.pdf)
+- [Hoja de referencia Shiny (Inglés)](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf)
 
 <center>
-<img src = "img/libros.PNG"/>
+<img src = "img/libros.PNG" height = 300/>
 </center>
 
 .footnote[
