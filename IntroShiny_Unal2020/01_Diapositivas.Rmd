@@ -1,0 +1,280 @@
+---
+title: "Aplicaciones web con R: Shiny"
+subtitle: "Créditos agropecuarios - Colombia 2019 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "[Edimer David Jaramillo](https://edimer.github.io/)"
+institute: "Universidad Nacional - Medellín"
+date: "20-08-2020"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+class: inverse, center, middle
+
+# Shiny
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+
+---
+# ¿Qué es Shiny?
+
+> *"Shiny es un paquete de código abierto que proporciona un marco elegante y potente para crear aplicaciones web utilizando R. Shiny le ayuda a convertir sus análisis en aplicaciones web interactivas sin necesidad de conocimientos de HTML, CSS o JavaScript."*
+
+> **RStudio.**
+
+<br>
+<center>
+<img src = "img/shiny.PNG"/>
+</center>
+
+---
+# El problema...
+
+<br>
+<br>
+<br>
+
+<center>
+<img src = "img/problema.PNG"/>
+</center>
+
+<!--Resaltando texto en color .red[rojo], .orange[naranja] y .blue[azul].-->
+
+---
+# Data Science
+
+<br>
+<br>
+<br>
+
+<center>
+<img src = "img/img0.png"/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Esctructura de App
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+# UI - Server
+
+<br>
+<br>
+<br>
+<center>
+<img src = "img/img3.PNG"  width = 700; height = 350/>
+</center>
+
+---
+# UI - Server: Simple
+
+<br>
+<br>
+<br>
+<center>
+<img src = "img/img4.PNG"  width = 700; height = 350/>
+</center>
+
+---
+# UI - Server: Múltiple
+
+<br>
+<center>
+<img src = "img/img15.PNG"  width = 900; height = 450/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Inputs - Outputs
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+# Inputs
+
+<br>
+
+<center>
+<img src = "img/img5.PNG"/>
+</center>
+
+---
+# Outputs
+
+<br>
+
+<center>
+<img src = "img/img6.PNG"/>
+</center>
+
+---
+# Render*
+
+<br>
+
+<center>
+<img src = "img/img9.PNG"/>
+</center>
+
+---
+# Input - Output
+
+<br>
+<br>
+<br>
+
+<center>
+<img src = "img/img8.PNG"/>
+</center>
+
+---
+# Input - Output
+
+<center>
+<img src = "img/img14.PNG"/>
+</center>
+
+
+---
+class: inverse, center, middle
+
+# Otras características
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+# Diseños
+
+<br>
+<center>
+<img src = "img/img18.PNG" width = 500; height = 500/>
+</center>
+
+---
+# Elementos HTML
+
+<br>
+<br>
+<br>
+<br>
+<center>
+<img src = "img/img19.PNG" width = 400; height = 200/>
+</center>
+
+---
+class: inverse, center, middle
+
+# Compartir Apps
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+# ShinyApps.io
+
+<br>
+<br>
+<center>
+<img src = "img/img20.PNG"/>
+</center>
+
+.footnote[
+[1] [ShinyApps.io](https://www.shinyapps.io/)
+]
+
+---
+
+# RStudio Connect
+
+<br>
+<br>
+<center>
+<img src = "img/img24.PNG"/>
+</center>
+
+.footnote[
+[1] [RStudio Connect](https://rstudio.com/products/connect/)
+]
+
+---
+class: inverse, center, middle
+
+# Recursos de Información
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# Mastering Shiny
+
+.footnote[
+[1] [Libro Mastering Shiny](https://mastering-shiny.org/)
+]
+
+<br>
+<center>
+<img src = "img/img22.PNG" width = 600; height = 400/>
+</center>
+
+---
+
+# Golemverse
+
+.footnote[
+[1] [Golemverse](https://golemverse.org/)
+]
+
+<br>
+<center>
+<img src = "img/img23.PNG"/>
+</center>
+
+---
+# Otros
+
+- [Shiny guía español](https://rstudio.com/wp-content/uploads/2015/03/shiny-spanish.pdf)
+- [Learn Shiny - Garret Grolemund](https://shiny.rstudio.com/tutorial/)
+
+<center>
+<img src = "img/libros.PNG"/>
+</center>
+
+.footnote[
+[1] Nota: todas las imágenes de esta presentación fueron obtenidas de [Learn Shiny - Garret Grolemund.](https://shiny.rstudio.com/tutorial/)
+]
+
+---
+class: inverse, center, middle
+
+# Material de apoyo
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# Repositorio Github
+
+<br>
+<center>
+<img src = "img/img17.PNG"/>
+</center>
+
+.footnote[
+[1] [Código fuente y datos - *IntroShiny_Unal2020*.](https://github.com/Edimer/AgroR)
+]
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
