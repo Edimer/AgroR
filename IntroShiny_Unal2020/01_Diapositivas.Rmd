@@ -126,7 +126,7 @@ class: inverse, center, middle
 </center>
 
 ---
-# Input - Output
+# Output
 
 <br>
 <br>
