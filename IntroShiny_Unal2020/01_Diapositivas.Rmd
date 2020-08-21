@@ -1,6 +1,6 @@
 ---
 title: "Aplicaciones web con R: Shiny"
-subtitle: "Créditos agropecuarios - Colombia 2019 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+subtitle: "Ejemplos de uso <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
 author: "[Edimer David Jaramillo](https://edimer.github.io/)"
 institute: "Universidad Nacional - Medellín"
 date: "20-08-2020"
