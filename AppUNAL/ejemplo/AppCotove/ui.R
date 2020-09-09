@@ -1,4 +1,4 @@
-﻿# ----- Bibliotecas -----
+# ----- Bibliotecas -----
 library(shiny)
 library(shinythemes)
 library(DT)
@@ -7,14 +7,12 @@ library(shinyWidgets)
 library(plotly)
 
 # ----- Datos -----
-load("../cotoveFinal.Rdata")
+load("cotoveFinal.Rdata")
 
-# ----- Shiny UI ------
 shinyUI(fluidPage(
   
   theme = shinytheme("cosmo"),
   
-  # ------- Descriptivo ---------
   navbarPage(
     "App Cotové",
     tabPanel(
@@ -57,7 +55,6 @@ shinyUI(fluidPage(
         )
       )
     ),
-    # ------- Distribuciones ---------
     tabPanel(
       "Variación Temporal",
       sidebarLayout(
@@ -75,13 +72,12 @@ shinyUI(fluidPage(
             choices = names(datos4 %>% select(peso_nto, peso_dest, ganancia_dia, edad_dest)),
             icon = icon("check"), 
             bigger = TRUE,
-            status = "primary"
+            status = "danger"
           )
         ),
         mainPanel(
           radioGroupButtons(
             inputId = "tipo2",
-            label = "",
             choices = c("Boxplot", "Tendencias"),
             status = "primary",
             checkIcon = list(

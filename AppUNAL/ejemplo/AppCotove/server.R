@@ -1,4 +1,4 @@
-﻿# ----- Bibliotecas -----
+# ----- Bibliotecas -----
 library(shiny)
 library(tidyverse)
 library(rlang)
@@ -13,12 +13,11 @@ datos4 <- datos4 %>%
   filter(ganancia_dia > 0)
 
 shinyServer(function(input, output) {
-  
   # Descriptivo ----
   funDescrip <- reactive({
     dataDescrip = datos4 %>% 
       filter(fecha_nac >= input$fecha1[1] & fecha_nac <= input$fecha1[2]) %>% 
-      filter(raza %in% input$raza1)
+      filter(raza %in% input$raza1) 
     
     if(input$tipo1 == "General"){
       dataDescrip %>% 
@@ -67,6 +66,7 @@ shinyServer(function(input, output) {
                 ))
   })
   
+  
   # Gráfico -----
   output$grafico <- renderPlotly({
     if(input$tipo2 == "Boxplot"){
@@ -78,7 +78,7 @@ shinyServer(function(input, output) {
         labs(x = "Año") +
         theme_light() +
         theme(axis.text.x = element_text(angle = 35, hjust = 1))
-        
+      
     } else if(input$tipo2 == "Tendencias"){
       datos4 %>% 
         mutate(año_nac = as.factor(año_nac)) %>% 
@@ -94,5 +94,8 @@ shinyServer(function(input, output) {
         theme(axis.text.x = element_text(angle = 35, hjust = 1))
     }
   })
+  
+  
+  
   
 })
