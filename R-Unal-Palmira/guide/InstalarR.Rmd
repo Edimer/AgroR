@@ -1,0 +1,66 @@
+---
+title: "Instalación de R y RStudio"
+author: "Edimer David Jaramillo"
+date: "Octubre de 2020"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      smooth_scroll: true
+      collapsed: false
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Instalación de R y RStudio
+
+## Descargar R
+
+  1. Clic [aquí](https://cran.r-project.org/bin/windows/base/) para descargar la última versión de R para Windows. Si necesita la versión para Mac OS clic [aquí.](https://cran.r-project.org/bin/macosx/) Si es usuario de Linux se sugiere revise [este repositorio.](https://cran.r-project.org/bin/linux/)
+
+<center>
+<img src = "img/R.PNG"/>
+</center>
+
+## Descargar RStudio
+
+  2. Clic [aquí](https://rstudio.com/products/rstudio/download/) para descargar la última versión de [RStudio.](https://rstudio.com/)
+  
+<center>
+<img src = "img/RStudio.PNG"/>
+</center>  
+
+## Video de instalación
+
+  3. Para la instalación de R y RStudio se recomienda ver el siguiente video.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nj6VlcKMmWc" frameborder="0" allowfullscreen></iframe>
+
+# Temas principales de la reunión
+
+<center>
+<img src = "https://trainingsinvelachery.in/wp-content/uploads/2020/01/datascience.png"/>
+</center> 
+
+<center>
+<img src = "https://www.houseofbots.com/images/news/3764/cover.png"/>
+</center> 
+
+# Libros sugeridos
+
+- [R para principiantes](https://bookdown.org/jboscomendoza/r-principiantes4/)
+- [R para Ciencia de Datos](https://es.r4ds.hadley.nz/)
+- [Libro Vivo de Ciencia de Datos](https://librovivodecienciadedatos.ai/)
+- [Gráficos con R](https://fhernanb.github.io/Graficos-con-R/)
+- [Spatial Data Science with R](https://rspatial.org/)
+- [Geocomputation with R](https://geocompr.robinlovelace.net/)
+
+# Más sobre mi
+
+- [Página web Edimer David Jaramillo](https://edimer.github.io/)
+- [Perfil Github Edimer David Jaramillo](https://github.com/Edimer)
+- [Perfil de RPubs Edimer David Jaramillo](https://rpubs.com/Edimer)
+
