@@ -1,0 +1,72 @@
+---
+title: "Pruebas de Evaluación Agronómica de genotipos de Cannabis sp."
+subtitle: "Análisis Estadístico con R <html><div style='float:left'></div><hr color='#EB811B' size=1px width=800px></html>"
+author: "[Edimer David Jaramillo](https://edimer.github.io/)"
+institute: "Universidad Nacional - Palmira"
+date: "28-11-2020"
+output:
+  xaringan::moon_reader:
+    css: ["mtheme_max.css", "metropolis-fonts"]
+    lib_dir: libs
+    yolo: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, center, middle
+
+# Lenguaje de programación
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+---
+
+# Concepto
+
+.pull-left[
+<br>
+<center>
+<img src = "img/img0.PNG"/>
+</center>
+]
+
+.pull-right[
+<br>
+- Un lenguaje de programación es un lenguaje formal, es decir, un lenguaje con reglas gramaticales bien definidas. Le proporciona a una persona (programador) la capacidad de escribir instrucciones o secuencias de órdenes en forma de algoritmos con el fin de controlar el comportamiento físico o lógico de una computadora, de manera que se puedan obtener diversas clases de datos o ejecutar determinadas tareas.
+]
+
+.footnote[
+[1] [Tomado de wikipedia](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n)
+]
+
+---
+class: inverse, center, middle
+
+# Material de apoyo
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+---
+
+# Repositorio Github
+
+<br>
+<center>
+<img src = "img/img0.PNG"/>
+</center>
+
+.footnote[
+[1] [Diapositivas, código fuente y datos.](https://github.com/Edimer/Unal-Palmira-Data-Science)
+]
+
+---
+class: inverse, center, middle
+
+# ¡Gracias!
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src="img/gracias.gif"/>
+</center>
+
