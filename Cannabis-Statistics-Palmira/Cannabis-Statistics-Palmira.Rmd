@@ -17,28 +17,238 @@ output:
 
 class: inverse, center, middle
 
-# Lenguaje de programación
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+# 
+
+<center>
+<img src = "https://yahooeysblog.files.wordpress.com/2017/01/george-e-p-box-models.jpg?w=640"/>
+</center>
+
 
 ---
 
-# Concepto
+class: inverse, center, middle
+
+# Diseño de experimentos: introducción
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
+
+<center>
+<img src = "https://cdn1.iconfinder.com/data/icons/future-farming-color/96/future-farming-technology-agriculture-science-512.png"; height = 400/>
+</center>
+
+
+
+---
+
+# Ronald Fisher
+
+- [La Estadística ana ciencia del sigo XX. R.A. Fisher, el genio](https://revistas.unal.edu.co/index.php/estad/article/view/28348/28693)
 
 .pull-left[
-<br>
+
 <center>
-<img src = "img/img0.PNG"/>
+<img src = "https://images-na.ssl-images-amazon.com/images/I/41Qltfc7x-L._SX323_BO1,204,203,200_.jpg"/>
 </center>
+
 ]
 
 .pull-right[
-<br>
-- Un lenguaje de programación es un lenguaje formal, es decir, un lenguaje con reglas gramaticales bien definidas. Le proporciona a una persona (programador) la capacidad de escribir instrucciones o secuencias de órdenes en forma de algoritmos con el fin de controlar el comportamiento físico o lógico de una computadora, de manera que se puedan obtener diversas clases de datos o ejecutar determinadas tareas.
+
+<center>
+<img src = "https://lh3.googleusercontent.com/proxy/np6r-hEw83oY_XFxjzrfipISTMePvvMO2Zk3eg-YP5OIWqrQx4kcal1KILXH-OUpVfsHmEnScn2dIkQ2jaM2h2QaU7SnOceFYOdXn03Zx-J8cq3WMDrcJTqzVlAVSEJRS9yecs6P6OnnZw"/>
+</center>
+
+- [Scientific method: Statistical errors](https://www.nature.com/news/scientific-method-statistical-errors-1.14700)
+
 ]
 
-.footnote[
-[1] [Tomado de wikipedia](https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n)
+---
+
+# El arte de la experimentación
+
+.pull-left[ 
+
+#### ¿Por qué hacer un experimento?
+
+- Determinar las principales causas de variación en una respuesta medida
+- Encontrar las condiciones que dan lugar a una respuesta máxima o mínima
+- Comparar las respuestas logradas en diferentes entornos de variables controlables
+- Obtener un modelo matemático para predecir respuestas futuras
+
+#### Técnicas fundamentales
+
+- Replicación `->`  Incrementa precisión
+- Bloqueo `->` Incrementa precisión
+- Aleatorización `->` Reduce el sesgo
+
 ]
+
+.pull-right[
+
+<br>
+
+<center>
+<img src = "https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-319-52250-0"/>
+</center>
+
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Evaluación Agronómica en Cannabis: Experimento y Análisis Estadístico
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+<center>
+<img src = "https://cdn0.iconfinder.com/data/icons/medical-cannabis-color/64/cannabis-drug-medicine-experiment-marijuana-medical-512.png"; height = 400/>
+</center>
+
+---
+
+# Guía práctica
+
+- [Tomado de *Situación actual y proyecciones del cannabis en Colombia*](https://www.acosemillas.com/wp-content/uploads/2019/10/3.-ICA-CANNABIS-MEDICINAL-CONGRESO.pdf)
+
+<center>
+<img src = "img/protocolo.PNG"; width = 320/>
+</center>
+
+.pull-left[
+
+#### Diseño Experimental
+
+- Bloques Completos al Azar con 3 repeticiones.
+- Cada unidad experimental deberá estar compuesta mínimo por 20 plantas
+- Variables: Longitud del peciolo (cm), Número de foliolos, THC (%), CBD (%), otras...
+
+]
+
+.pull-right[
+
+#### Análisis Estadístico
+
+- Variables cualitativas: Análisis de Frecuencias
+- Variables Cuantitativas: Análisis Varianza – Comparación Medias (Duncan, Tukey, LSD)
+
+]
+
+
+---
+
+class: inverse, center, middle
+
+# Ejemplo de análisis con R
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html>
+
+<center>
+<img src = "https://www.puneetks.com/img/headers/R2.png"/>
+</center>
+
+---
+
+# Datos y resumen descriptivo
+
+```{r}
+datos <- read.csv("data/data_ejemplo.csv")
+head(datos)
+```
+
+
+```{r}
+summary(datos)
+```
+
+---
+
+# Distribución por genotipo
+
+```{r, warning=FALSE, message=FALSE, fig.align='center', fig.height=5.5, fig.width=9}
+library(tidyverse)
+datos %>% ggplot(aes(x = Genotipo, y = Altura)) +
+  geom_boxplot() + labs(y = "Altura (cm)")
+```
+
+---
+
+# Distribución por genotipo  y bloque
+
+```{r, warning=FALSE, message=FALSE, fig.align='center', fig.height=5.5, fig.width=9}
+datos %>% ggplot(aes(x = Genotipo, y = Altura)) +
+  facet_wrap(~Bloque) +
+  geom_boxplot() + labs(y = "Altura (cm)")
+```
+
+---
+
+# Hipótesis y Modelo Matemático
+
+### Modelo General
+
+$$y_{ij} = \mu + \alpha_i + \beta_j + \epsilon_{ij},\ i = 1, 2, 3,\  j = 1, 2, 3$$
+
+### Hipótesis Principal
+
+$$H_0: \alpha_1 = \alpha_2 = \alpha_3 = 0 \\
+H_1: Algún\ \alpha_i\ diferente\ de\ 0$$
+
+### Hipótesis Verificación
+
+$$H_0: \beta_1 = \beta_2 = \beta_3 = 0 \\
+H_1: Algún\ \beta_i\ diferente\ de\ 0$$
+
+---
+
+# Ajuste del modelo
+
+```{r}
+modelo <- aov(Altura ~ Genotipo + Bloque, data = datos)
+summary(modelo)
+```
+
+- **Error aleatorio del modelo $\sigma^2$:**
+
+```{r}
+# Estimador de la varianza del error aleatorio
+varErr <- summary(modelo)[[1]]$"Mean Sq"[3]
+
+# Estimación de la desviación estándar del error aleatorio
+desvErr <- sqrt(varErr)
+desvErr
+```
+
+---
+
+# Diagnósticos del modelo
+
+```{r, warning=FALSE, message=FALSE, fig.align='center', fig.height=5.5, fig.width=9}
+par(mfrow = c(2, 2))
+plot(modelo)
+```
+
+---
+
+# Comparación de medias (Tukey) - Tabla
+
+```{r, warning=FALSE, message=FALSE, fig.align='center', fig.height=5.5, fig.width=9}
+TukeyHSD(modelo)
+```
+
+---
+
+# Comparación de medias (Tukey) - Gráfico Genotipos
+
+```{r, warning=FALSE, message=FALSE, fig.align='center', fig.height=5.5, fig.width=9}
+plot(TukeyHSD(modelo, which = "Genotipo"))
+```
+
+---
+
+# Comparación de medias (Tukey) - Gráfico Bloque
+
+```{r, warning=FALSE, message=FALSE, fig.align='center', fig.height=5.5, fig.width=9}
+plot(TukeyHSD(modelo, which = "Bloque"))
+```
 
 ---
 class: inverse, center, middle
@@ -56,7 +266,7 @@ class: inverse, center, middle
 </center>
 
 .footnote[
-[1] [Diapositivas, código fuente y datos.](https://github.com/Edimer/Unal-Palmira-Data-Science)
+[1] [Diapositivas, código fuente y datos.](https://github.com/Edimer/AgroR/tree/master/Cannabis-Statistics-Palmira)
 ]
 
 ---
