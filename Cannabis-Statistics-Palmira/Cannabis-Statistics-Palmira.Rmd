@@ -41,7 +41,7 @@ class: inverse, center, middle
 
 # Ronald Fisher
 
-- [La Estadística ana ciencia del sigo XX. R.A. Fisher, el genio](https://revistas.unal.edu.co/index.php/estad/article/view/28348/28693)
+- [La Estadística una ciencia del sigo XX. R.A. Fisher, el genio](https://revistas.unal.edu.co/index.php/estad/article/view/28348/28693)
 
 .pull-left[
 
@@ -54,7 +54,7 @@ class: inverse, center, middle
 .pull-right[
 
 <center>
-<img src = "https://lh3.googleusercontent.com/proxy/np6r-hEw83oY_XFxjzrfipISTMePvvMO2Zk3eg-YP5OIWqrQx4kcal1KILXH-OUpVfsHmEnScn2dIkQ2jaM2h2QaU7SnOceFYOdXn03Zx-J8cq3WMDrcJTqzVlAVSEJRS9yecs6P6OnnZw"/>
+<img src = "http://www.madrimasd.org/blogs/matematicas/files/2019/07/image001.gif"/>
 </center>
 
 - [Scientific method: Statistical errors](https://www.nature.com/news/scientific-method-statistical-errors-1.14700)

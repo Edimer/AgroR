@@ -148,7 +148,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/img2.png"/>
+<img src = "img/img2.PNG"/>
 </center>
 
 ---
@@ -161,7 +161,7 @@ class: inverse, center, middle
 <br>
 
 <center>
-<img src = "img/img1.png"/>
+<img src = "img/img1.PNG"/>
 </center>
 
 .footnote[
@@ -205,7 +205,7 @@ class: inverse, center, middle
 ]
 <br>
 <center>
-<img src = "img/img6.png"/>
+<img src = "img/img6.PNG"/>
 </center>
 
 
@@ -216,7 +216,7 @@ class: inverse, center, middle
 <br>
 
 <center>
-<img src = "img/img7.png"/>
+<img src = "img/img7.PNG"/>
 </center>
 
 ---
@@ -235,7 +235,7 @@ class: inverse, center, middle
 <br>
 <br>
 <center>
-<img src = "img/img8.png"/>
+<img src = "img/img8.PNG"/>
 </center>
 
 --
@@ -290,7 +290,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/img11.png"/>
+<img src = "img/img11.PNG"/>
 </center>
 
 ---
@@ -303,7 +303,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/img14.png" ; height = 400/>
+<img src = "img/img14.PNG" ; height = 400/>
 </center>
 
 ---
@@ -313,7 +313,7 @@ class: inverse, center, middle
 - [Artículo SoilGrids.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169748)
 
 <center>
-<img src = "img/img12.png" ; height = 400/>
+<img src = "img/img12.PNG" ; height = 400/>
 </center>
 
 .footnote[
@@ -347,7 +347,7 @@ class: inverse, center, middle
 <br>
 <br>
 <center>
-<img src = "img/img3.png"/>
+<img src = "img/img3.PNG"/>
 </center>
 
 ---
@@ -389,7 +389,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/libro2.png"/>
+<img src = "img/libro2.PNG"/>
 </center>
 
 ---
@@ -398,7 +398,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/libro3.png"width = 350; height = 400/>
+<img src = "img/libro3.PNG"width = 350; height = 400/>
 </center>
 
 .footnote[
@@ -415,7 +415,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/libro1.png" width = 600; height = 400/>
+<img src = "img/libro1.PNG" width = 600; height = 400/>
 </center>
 
 ---
@@ -475,7 +475,7 @@ class: inverse, center, middle
 
 <br>
 <center>
-<img src = "img/img17.png"/>
+<img src = "img/img17.PNG"/>
 </center>
 
 .footnote[
